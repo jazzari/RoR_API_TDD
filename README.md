@@ -1,13 +1,13 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Rails API with TDD
+Udemy's course REST API with Ruby on Rails
 
 Things you may want to cover:
 
-* Ruby version
+* Ruby version: 2.7.0
 
-* System dependencies
+* Rails version: 5.2.4.4
 
 * Configuration
 
@@ -15,7 +15,7 @@ Things you may want to cover:
 
 * Database initialization
 
-* How to run the test suite
+* Test suite: Rspec
 
 * Services (job queues, cache servers, search engines, etc.)
 
