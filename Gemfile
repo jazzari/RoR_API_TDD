@@ -9,8 +9,9 @@ gem 'rails', '~> 5.2.4', '>= 5.2.4.4'
 gem 'sqlite3'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-# gem 'jbuilder', '~> 2.5'
+# Use jsonapi for json serialization
+gem 'jsonapi-serializer'
+
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
