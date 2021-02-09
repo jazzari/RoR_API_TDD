@@ -5,6 +5,6 @@ require 'rails_helper'
         expect(post '/login').to route_to('access_tokens#create')
     end
     it 'should route to access_token destroy action' do 
-        expect(delete '/login').to route_to('access_tokens#destroy')
+        expect(delete '/logout').to route_to('access_tokens#destroy')
     end
  end
