@@ -11,6 +11,8 @@ gem 'sqlite3'
 gem 'puma', '~> 3.11'
 # Use jsonapi for json serialization
 gem 'jsonapi-serializer'
+# Serialize json errors  
+gem 'jsonapi_errors_handler'
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
