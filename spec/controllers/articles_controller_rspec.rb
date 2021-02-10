@@ -107,17 +107,42 @@ describe ArticlesController do
                             "status" => 422,
                             "title" => "Invalid request",
                           }
-                        )
+                        ) 
                 end
             end
 
         end
 
-        # context 'when user is authorized' do 
-        #     it 'should return success response' do 
-        #         expect(response).to have_http_status(:ok)
-        #     end
-        # end
+        context 'when success request sent' do 
+            let(:access_token) { create :access_token }
+            before { request.headers['authorization'] = "Bearer #{access_token.token}" }
+
+            let(:valid_attributes) do 
+                {
+                    'data' => {
+                        'attributes' => {
+                            'title' => 'This is some Title',
+                            'content' => 'This is some sample content',
+                            'slug' => 'this-is-some-title'
+                        }
+                    }
+                }
+            end
+            subject { post :create, params: valid_attributes }
+
+            it 'should return 201 status code' do 
+                subject
+                expect(response).to have_http_status(:created)
+            end
+            it 'should have proper json body' do 
+                subject
+                expect(json).to include(valid_attributes['data']['attributes'])
+            end
+            it 'should create the article' do 
+                expect{ subject }.to change{ Article.count }.by(1)
+            end
+
+        end
 
     end
 end
