@@ -49,4 +49,26 @@ describe ArticlesController do
           expect(json['id']).to eq(expected_article.id)
           end
     end
+
+    describe '#create' do 
+        let(:article) { create :article }
+        subject { post :create }
+
+        context 'when no code provided' do 
+            it_behaves_like 'forbidden_requests'
+        end
+
+        context 'when invalid  code provided' do 
+            before { request.headers['authorization'] = 'Invalid token' }
+
+            it_behaves_like 'forbidden_requests'
+        end
+
+        # context 'when user is authorized' do 
+        #     it 'should return success response' do 
+        #         expect(response).to have_http_status(:ok)
+        #     end
+        # end
+
+    end
 end
