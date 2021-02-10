@@ -10,4 +10,7 @@ describe 'articles routes' do
     it 'should route to articles create' do 
         expect(post '/articles').to route_to('articles#create')
     end
+    it 'should route to articles update' do 
+        expect(patch '/articles/1').to route_to('articles#update', id: '1')
+    end
 end
